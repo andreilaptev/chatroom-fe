@@ -17,6 +17,10 @@ export class DataService {
     return this.http.get(this.url + 'users' );
   }
 
+  getUserById(id){
+    return this.http.get(this.url + 'users/' + id);
+  }
+
   getUserByLogin(login){    
     return this.http.get(this.url + 'users/getUser?login=' + login)
   }

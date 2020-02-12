@@ -9,8 +9,9 @@ import { DataService } from '../data.service';
 export class PostsComponent implements OnInit {
 
   posts: any;
-  owner: boolean = false;
+  owner: any;
   userId: any;
+  name: string;
   //@Input 
 
   constructor(private data: DataService){}
@@ -36,4 +37,15 @@ export class PostsComponent implements OnInit {
   //   )
   // }
 
+
+  getAuthor(id){
+    
+    this.data.getUserById(id)
+      .subscribe(user => this.owner = user)
+      //console.log(this.owner)
+      this.name = this.owner.userFullname;
+        
+  }
+
+  
 }
