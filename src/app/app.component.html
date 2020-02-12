@@ -1,14 +1,12 @@
-
-
-
-<div class="container">
-  <div class="welcome"> 
-    <h1> WELCOME TO OUR COZY CHAT ROOM !</h1>
-  </div>
-
-
   <!-- MAIN  SECTION -->
-
+  <div class="container"  *ngIf="signedIn">
+      <div class="welcome"> 
+        <h1> WELCOME TO OUR COZY CHAT ROOM !</h1>
+        
+          <button class="logout"> Logout </button>
+       
+      </div>
+    
   <div class="content">
    <app-posts>
      
@@ -25,45 +23,54 @@
 
   </div>
 
-</div >
+</div>
 
  <!-- SIGNIN SECTION -->
 
- <!--<div class="signin">
-    <h2> LOGIN FORM </h2>
+ <div class="signin" *ngIf="!authenticated">
+    <h2 class="welcome"> PLEASE LOGIN </h2>
 
-    <h3 *ngIf="authorizationError" style="color: red"> Authorization Error </h3>
+    <h3 *ngIf="authorizationError" style="color: red"> {{ warningMessage}} </h3>
   
     Login:<br>
-  <input type="text" name="email"   [(ngModel)]="email" /> 
+  <input class="input" type="text" name="login"   [(ngModel)]="login" /> 
    
   <br><br>
   
   Password: <br>
-  <input type="password" name="password" [(ngModel)]="password" />
+  <input class="input" type="password" name="password" [(ngModel)]="password" />
    
   <br><br>  
-    <button class="enterBtn" (click)="onLogin(email, password)"> LOGIN </button>
+    <button class="enterBtn" (click)="signIn(login, password)"> LOGIN </button>
+   
     <br>
     
-    <a routerLink="/register"> REGISTER </a>
-</div>-->
+    or <button class="register" (click)="registerRequest()"> REGISTER </button>
+</div>
 
 <!-- END OF SIGNIN SECTION -->
 
 <!-- REGISTER SECTION -->
 
-<!--<h2> REGISTRATION FORM </h2>
+<div class="signin" *ngIf="register">
+  
+    <h2 class="welcome"> REGISTRATION FORM </h2>
 
-Full Name :<br>
-  <input type="text" name="name" [(ngModel)]="newPatient.name"/>
-  <br> <br>
-Password: <br>
-    <input type="password" name="password" [(ngModel)]="newPatient.password" />
-<br><br>
+    Full Name :<br>
+      <input class="input" type="text" name="name" [(ngModel)]="newUser.userFullName"/>
+      <br> <br>
 
-<button class="enterBtn" (click)="addPatient(newPatient)"> REGISTER </button>
-<br>-->
+      Login: <br>
+        <input class="input" type="text" name="text" [(ngModel)]="newUser.login" />
+    <br><br>
+
+    Password: <br>
+        <input class="input" type="password" name="password" [(ngModel)]="newUser.password" />
+    <br><br>
+
+    <button class="enterBtn" (click)="registerUser(newUser)"> REGISTER </button>
+    <br>
+</div>
 
 <!-- END OF REGISTER SECTION -->
 

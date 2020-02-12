@@ -1,15 +1,26 @@
 .welcome {
     color: #2e6dd1;
     text-align: center;
+    display: grid;
+    grid-template-columns: 85% 15%;
 }
-
+.logout {
+    height: 30px;
+    width: 100px;
+    transform: translateX(-15%);
+    margin-top: 25px;
+    border-radius: 5px;
+}
 .content {
     display: grid;
     grid-template-columns: 60% 40%;
     padding: 15px 15px;
+    
 }
 
-
+h1 {
+    
+}
 
 .message {
     height: 300px;
@@ -41,6 +52,23 @@ input {
     height: 50px;
     border-radius: 5px;
     background: red;
+}
+
+.enterBtn {
+    width: 20% !important;
+}
+
+.register {
+    margin-top: 30px;
+}
+
+.input {
+    width: 30%;
+    height: 30px;;
+}
+
+.signin {
+    text-align: center;
 }
 
 /* .newMessage {

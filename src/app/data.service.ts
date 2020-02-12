@@ -1,19 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
+
 @Injectable()
 export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  url = 'https://localhost:44321/api/';
-  //url = 'http://chatroom-dev.us-east-1.elasticbeanstalk.com/api/';
+  
+
+  //url = 'https://localhost:44321/api/';
+  url = 'http://chatroom-dev.us-east-1.elasticbeanstalk.com/api/';
 
   getUsers(){
     return this.http.get(this.url + 'users' );
   }
 
-  userLogin(user){
+  getUserByLogin(login){
+    return this.http.get(this.url + 'users/getUser?login=' + login)
+  }
+
+  userRegister(user){
 
     const body = {
       userFullName: user.fullName,
@@ -48,9 +56,9 @@ export class DataService {
       userId: post.userId 
     };
 
-    return this.http.put(this.url + 'Posts/' + postId, body); 
-    
+    return this.http.put(this.url + 'Posts/' + postId, body);    
 
   }
+
 
 }
