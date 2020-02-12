@@ -36,6 +36,8 @@ export class AppComponent {
     this.data.publishPost(this.newPost)
       .subscribe(data => console.log(data))
 
+      window.location.reload();
+
   }
 
   clearMessage(){
