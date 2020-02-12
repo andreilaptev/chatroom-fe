@@ -17,6 +17,7 @@
     margin-left: 20px;
     border: 1px solid blue;
     border-radius: 2px;
+    background: lightyellow;
 }
 input {
     width: 100%;

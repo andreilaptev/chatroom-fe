@@ -6,8 +6,8 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  //url = 'https://localhost:44321/api/';
-  url = 'http://chatroom-dev.us-east-1.elasticbeanstalk.com/api/';
+  url = 'https://localhost:44321/api/';
+  //url = 'http://chatroom-dev.us-east-1.elasticbeanstalk.com/api/';
 
   getUsers(){
     return this.http.get(this.url + 'users' );

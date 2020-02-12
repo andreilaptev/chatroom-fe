@@ -26,11 +26,15 @@ export class AppComponent {
     })   
   }
 
-  postMessage(post){
+  postMessage(content){
 
-    console.log(post)
-    this.newPost.content = post;
+    console.log(content)
+    this.newPost.content = content;
+    this.newPost.likesNo = 0;
+    this.newPost.userId = 1;
 
+    this.data.publishPost(this.newPost)
+      .subscribe(data => console.log(data))
 
   }
 
