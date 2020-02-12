@@ -54,10 +54,10 @@ export class AppComponent {
 
   postMessage(content){
 
-    console.log(content)
+    //console.log(content)
     this.newPost.content = content;
     this.newPost.likesNo = 0;
-    this.newPost.userId = this.currentUser.userId;
+    this.newPost.userId = parseInt(sessionStorage.getItem('userId'));
 
     this.data.publishPost(this.newPost)
       .subscribe(data => console.log(data))
