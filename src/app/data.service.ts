@@ -32,7 +32,7 @@ export class DataService {
   userRegister(user){
 
     const body = {
-      userFullName: user.fullName,
+      userFullName: user.userFullName,
       login: user.login,
       password: user.password
     }

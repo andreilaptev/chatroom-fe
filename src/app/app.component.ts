@@ -18,6 +18,7 @@ export class AppComponent {
   content: string;
   currentUser: any;
   warningMessage;
+  userId: number;
 
   temp: any;
 
@@ -113,12 +114,21 @@ export class AppComponent {
   registerUser(user){
    user.password = this.encrypt(user.password);
 
-  //  this.data.userRegister(user)
-  //   .subscribe(data => console.log(data));
+   this.data.userRegister(user)
+    .subscribe(data => {
+      //console.log(data.userId);
+      this.temp = data;
+      sessionStorage.setItem('userId', this.temp.userId);
+
+    }
+
+      );
 
     this.register = false;
     this.signedIn = true;
     this.authorizationError = false;
+    
+
   }
 
   //this.data.userRegister()

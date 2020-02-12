@@ -1,11 +1,11 @@
 <div class="list">
     <ul>
-      <li *ngFor="let post of posts"   [ngStyle]="{'background-color': post.userId == userId ? 'lightyellow' : '#fafafa' }">
+      <li *ngFor="let post of posts"   [ngStyle]="{'background-color': post.userId == userId ? 'yellow' : '#fafafa' }">
         <table> <!-- -->
           <tbody>
             <tr>
-              {{ getAuthor(post.userId) }}
-              {{ owner}}
+              <!--{{ getAuthor(post.userId) }}
+              {{ owner}}-->
             </tr>
             <tr>
              <h3> {{ post.content }} </h3>
