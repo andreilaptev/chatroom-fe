@@ -21,6 +21,10 @@ export class DataService {
     return this.http.get(this.url + 'users/getUser?login=' + login)
   }
 
+  getUserWithLogin(user){
+    return this.http.get('http://chatroom-dev.us-east-1.elasticbeanstalk.com/api/users/getuser?login=' + user);
+  }
+
   userRegister(user){
 
     const body = {

@@ -9,6 +9,8 @@ import { DataService } from '../data.service';
 export class PostsComponent implements OnInit {
 
   posts: any;
+  owner: boolean = false;
+  userId: any;
   //@Input 
 
   constructor(private data: DataService){}
@@ -20,6 +22,9 @@ export class PostsComponent implements OnInit {
         //console.log(this.posts)
       }
     )
+
+    //console.log(this.posts)
+    this.userId = sessionStorage.getItem('userId');
   }
 
   // ngAfterViewInit(){

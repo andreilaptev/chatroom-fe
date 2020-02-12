@@ -1,7 +1,7 @@
 <div class="list">
     <ul>
-      <li *ngFor="let post of posts">
-        <table>
+      <li *ngFor="let post of posts"   [ngStyle]="{'background-color': post.userId == userId ? 'yellow' : 'white' }">
+        <table> <!-- -->
           <tbody>
             <tr>
              <!-- {{ user.userFullName }}-->

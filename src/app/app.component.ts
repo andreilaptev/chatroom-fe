@@ -19,6 +19,8 @@ export class AppComponent {
   currentUser: any;
   warningMessage;
 
+  temp: any;
+
   authenticated: boolean;
   register: boolean = false;
   signedIn: boolean = false;
@@ -55,7 +57,7 @@ export class AppComponent {
     console.log(content)
     this.newPost.content = content;
     this.newPost.likesNo = 0;
-    this.newPost.userId = 1;
+    this.newPost.userId = this.currentUser.userId;
 
     this.data.publishPost(this.newPost)
       .subscribe(data => console.log(data))
@@ -72,18 +74,17 @@ export class AppComponent {
 
     //this.currentUser.password = password;
     this.data.getUserByLogin(login)
-    .subscribe(user => console.log(user))
-    //   {
-    //   this.currentUser = user[0]
-    // console.log(this.currentUser)
-    // }
-    // )
+    .subscribe(user => 
+      {
+      this.currentUser = user[0];
+    //console.log(this.currentUser)
+    }
+    )
 
     if(this.currentUser == undefined) {
-      this.warningMessage = "Sorry, No such User found (:";
-      this.authorizationError = true;
+      // this.warningMessage = "Sorry, No such User found (:";
+      // this.authorizationError = true;
     }
-
     else {
       let unHashedPass = this.decrypt(this.currentUser.password, this.decPassword);
 
@@ -94,6 +95,7 @@ export class AppComponent {
         this.signedIn = true;
 
         sessionStorage.setItem('authorized', 'true');
+        sessionStorage.setItem('userId', this.currentUser.userId);
 
       } else {
         this.authorizationError = true;
