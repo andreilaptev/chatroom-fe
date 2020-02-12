@@ -1,9 +1,16 @@
 .welcome {
     color: #2e6dd1;
     text-align: center;
+}
+
+.welcome_header {
+    color: #2e6dd1;
+    text-align: center;
     display: grid;
     grid-template-columns: 85% 15%;
 }
+
+   
 .logout {
     height: 30px;
     width: 100px;
@@ -18,9 +25,6 @@
     
 }
 
-h1 {
-    
-}
 
 .message {
     height: 300px;

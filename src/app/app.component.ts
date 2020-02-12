@@ -72,10 +72,12 @@ export class AppComponent {
 
     //this.currentUser.password = password;
     this.data.getUserByLogin(login)
-    .subscribe(user => {
-      this.currentUser = user[0]
-    console.log(this.currentUser)
-    })
+    .subscribe(user => console.log(user))
+    //   {
+    //   this.currentUser = user[0]
+    // console.log(this.currentUser)
+    // }
+    // )
 
     if(this.currentUser == undefined) {
       this.warningMessage = "Sorry, No such User found (:";
@@ -127,7 +129,10 @@ export class AppComponent {
     return CryptoJS.AES.decrypt(resp.trim(), pattern.trim()).toString(CryptoJS.enc.Utf8);
   }
 
-  
+  logout(){
+    sessionStorage.clear();
+    window.location.reload();
+  }
     
 
 }
