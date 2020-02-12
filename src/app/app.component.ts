@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from './data.service';
+import { Post } from './post';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,35 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  users: any;
+  posts: any;
+  newPost: Post = new Post();
+  content: string;
+
+  constructor(private data: DataService){}
+
+  ngOnInit(){
+
+    this.data.getUsers()
+    .subscribe(users => {
+      this.users = users;
+      //console.log(this.users)    
+    })   
+  }
+
+  postMessage(post){
+
+    console.log(post)
+    this.newPost.content = post;
+
+
+  }
+
+  clearMessage(){
+    this.content = "";
+  }
+
+    
+
 }

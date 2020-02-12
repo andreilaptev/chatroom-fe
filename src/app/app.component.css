@@ -1,0 +1,47 @@
+.welcome {
+    color: #2e6dd1;
+    text-align: center;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    padding: 15px 15px;
+}
+
+
+
+.message {
+    height: 300px;
+    width: 92%;
+    margin-left: 20px;
+    border: 1px solid blue;
+    border-radius: 2px;
+}
+input {
+    width: 100%;
+    height: 100%;
+    background: lightgoldenrodyellow;
+}
+
+.post-button {
+    transform: translateX(50%);
+    margin: 50px auto;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    float: left;
+    background: lightgreen;
+}
+.clear-button {
+    transform: translateX(50%);
+    margin: 50px auto;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    background: red;
+}
+
+/* .newMessage {
+    height: 300px;;
+} */

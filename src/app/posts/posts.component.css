@@ -1,0 +1,8 @@
+.list {
+    height: auto;
+    border: 1px solid blue;
+    border-radius: 2px;
+}
+li {
+    list-style: none;
+}
