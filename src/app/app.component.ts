@@ -44,7 +44,8 @@ export class AppComponent {
       //console.log(this.users)    
     })   
 
-    if(sessionStorage.getItem('authorized') == 'true') {
+    //if(sessionStorage.getItem('authorized') == 'true' || sessionStorage.getItem('user') != undefined) {
+    if(sessionStorage.length > 0) {
       this.authenticated = true;
       this.signedIn = true;
     }  else {
