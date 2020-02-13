@@ -1,7 +1,7 @@
 <div class="list">
     <ul>
-      <li *ngFor="let post of posts"   [ngStyle]="{'background-color': post.userId == userId ? 'yellow' : '#fafafa' }">
-        <table> <!-- -->
+      <li *ngFor="let post of posts"   [ngStyle]="{'background-color': post.userId == userId ? '#f5e9d5' : '#fafafa' }">
+        <table> 
           <tbody>
             <tr class="author-name">
               <h3>Author: {{ post.authorName}} </h3>
@@ -10,7 +10,7 @@
              <h4> {{ post.content }} </h4>
             </tr>
             <tr>
-                {{ post.time }} 
+                {{ post.time  }} 
               </tr>
 
                 <app-controls [post]=post  [ngStyle]="{'display': post.userId == userId ? 'none' : 'block' }"></app-controls>
