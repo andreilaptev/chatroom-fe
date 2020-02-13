@@ -3,19 +3,17 @@
       <li *ngFor="let post of posts"   [ngStyle]="{'background-color': post.userId == userId ? 'yellow' : '#fafafa' }">
         <table> <!-- -->
           <tbody>
-            <tr>
-              <!--{{ getAuthor(post.userId) }}
-              {{ owner}}-->
+            <tr class="author-name">
+              <h3>Author: {{ post.authorName}} </h3>
             </tr>
             <tr>
-             <h3> {{ post.content }} </h3>
+             <h4> {{ post.content }} </h4>
             </tr>
             <tr>
                 {{ post.time }} 
               </tr>
 
-              <!--<app-controls likes={{post.likesNo}} postId={{post.postId}}></app-controls>-->
-              <app-controls [post]=post  [ngStyle]="{'display': post.userId == userId ? 'none' : 'block' }"></app-controls>
+                <app-controls [post]=post  [ngStyle]="{'display': post.userId == userId ? 'none' : 'block' }"></app-controls>
 
           </tbody>
         </table>

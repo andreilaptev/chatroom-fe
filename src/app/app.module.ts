@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
 import { ControlsComponent } from './controls/controls.component';
 import { DataService } from './data.service';
+import { AuthorPipe } from './author.pipe';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { DataService } from './data.service';
     AppComponent,
     PostsComponent,
     ControlsComponent,
+    AuthorPipe,
     
   ],
   imports: [

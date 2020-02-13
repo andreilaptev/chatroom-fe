@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { AuthorPipe } from '../author.pipe';
 
 @Component({
   selector: 'app-posts',
@@ -43,7 +44,8 @@ export class PostsComponent implements OnInit {
     this.data.getUserById(id)
       .subscribe(user => this.owner = user)
       //console.log(this.owner)
-      this.name = this.owner.userFullname;
+      let x = this.owner.userFullname;
+      return x;
         
   }
 
